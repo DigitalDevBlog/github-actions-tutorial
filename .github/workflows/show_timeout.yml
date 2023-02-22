@@ -1,0 +1,11 @@
+name: Timeout
+on: [ push ]
+jobs:
+  status_functions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
+    steps:
+      - name: Step 1 - takes more than one minute
+        run: sleep 120 # sleep function takes seconds as input
+      - name: Step 2 - This step should not run because of the timeout  
+        run: echo "This text should not show because of the timeout
