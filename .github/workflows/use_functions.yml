@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Dump output of functions
-       run: |
-         echo ${{ contains('DigitalDev', 'ita') }}
-         echo ${{ startsWith('DigitalDev', 'Digi') }}
-         echo ${{ endsWith('DigitalDev', 'Dev')}}
-         echo ${{ format('Hi! {0} {1} {2}', 'DigitalDev', 'is', 'here!') }}
+        run: |
+          echo ${{ contains('DigitalDev', 'ita') }}
+          echo ${{ startsWith('DigitalDev', 'Digi') }}
+          echo ${{ endsWith('DigitalDev', 'Dev')}}
+          echo ${{ format('Hi! {0} {1} {2}', 'DigitalDev', 'is', 'here!') }}
