@@ -1,0 +1,17 @@
+name: Status Functions
+on: [ push, pull_request ]
+jobs:
+  status_functions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Only run on pull_request
+        if: github.event_name == 'pull_request'
+        run: echo "Only running on pull request."
+      - name: This is a failing steps
+        run: eccho "This step fails because echo is misspelled."
+      - name: Run even when the previous step failed
+        if: failure()
+        run: echo "Run even with previous step failing."
+      - name: Run always
+        if: always()
+        run: echo "Run this step always no matter what"
