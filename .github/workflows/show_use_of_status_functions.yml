@@ -4,7 +4,7 @@ jobs:
   status_functions:
     runs-on: ubuntu-latest
     steps:
-      - name: Only run on pull_request
+      - name: Only run on push only
         if: github.event_name == 'push'
         run: echo "Only running on push."
       - name: This is a failing steps
