@@ -4,8 +4,8 @@ jobs:
 functions:
 	runs-on: ubuntu-latest
 	steps:
-		- name: Dump output of functions
-		  run: |
+	- name: Dump output of functions
+		run: |
 			echo ${{ contains('DigitalDev', 'ita') }}
 			echo ${{ startsWith('DigitalDev', 'Digi') }}
 			echo ${{ endsWith('DigitalDev', 'Dev')}}
