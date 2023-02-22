@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Only run on pull_request
-        if: github.event_name == 'pull_request'
-        run: echo "Only running on pull request."
+        if: github.event_name == 'push'
+        run: echo "Only running on push."
       - name: This is a failing steps
         run: eccho "This step fails because echo is misspelled."
       - name: Run even when the previous step failed
