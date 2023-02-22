@@ -7,11 +7,11 @@ jobs:
       - name: Only run on push only
         if: github.event_name == 'push'
         run: echo "Only running on push."
-      - name: This is a failing steps
+      - name: This is a failing step
         run: eccho "This step fails because echo is misspelled."
       - name: Run even when the previous step failed
         if: failure()
-        run: echo "Run even with previous step failing."
+        run: echo "Run even with the previous step failing."
       - name: Run always
         if: always()
-        run: echo "Run this step always no matter what"
+        run: echo "Run this step always, no matter what."
