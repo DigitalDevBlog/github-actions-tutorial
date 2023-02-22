@@ -1,0 +1,17 @@
+name: Continue on Error
+on: [ push ]
+jobs:
+  status_functions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Step 1
+        if: github.event_name == 'push'
+        run: echo "Only running on push."
+      - name: Step 2
+        run: eccho "This step fails because echo is misspelled."
+        continue-on-error: true
+      - name: Step 3
+        run: echo "Run step 3 even when step 2 failing."
+      - name: Step 4
+        run: echo "Run step 4 even when step 2 failing."
